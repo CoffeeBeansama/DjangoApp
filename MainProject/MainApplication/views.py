@@ -48,3 +48,17 @@ def updateRecord(request,id):
     member.lastName = lastName
     member.save()
     return HttpResponseRedirect(reverse("home"))
+
+def delete(request,id):
+    member = models.Member.objects.get(id=id)
+    template = loader.get_template("members/delete.html")
+    context = {
+        "member" : member
+    }
+    return HttpResponse(template.render(context,request))
+
+def deleteRecord(request,id):
+    member = models.Member.objects.get(id=id)
+    member.delete()
+    return HttpResponseRedirect(reverse("home"))
+

@@ -10,6 +10,7 @@
                 <th> ID </th>
                 <th> First </th>
                 <th> Last </th>
+                <th> Action </th>
             </thead>
                 <tbody>
                     {% for member in members %}
@@ -17,6 +18,7 @@
                         <td><a href="update/{{member.id}}"> {{member.id}} </a> </td>
                         <td>{{member.firstName}}</td>
                         <td>{{member.lastName}}</td>
+                        <td><a href="delete/{{member.id}}"> Delete </a> </td>
                     </tr>
                     {% endfor %}
                 </tbody>

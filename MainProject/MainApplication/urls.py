@@ -11,4 +11,6 @@ urlpatterns = [
     path("home/add/addrecord/",views.addRecord,name="addrecord"),
     path("home/update/<int:id>",views.update,name="update"),
     path("home/update/updaterecord/<int:id>",views.updateRecord,name="updaterecord"),
+    path("home/delete/<int:id>",views.delete,name="delete"),
+    path("home/delete/deleterecord/<int:id>",views.deleteRecord,name="deleterecord"),
 ]
