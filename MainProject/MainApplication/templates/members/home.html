@@ -1,29 +1,107 @@
-<html>
-    <head>
-        <title> Team C QA Department </title>
-    </head>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-    <body>
-        <a href="add/"> Add Member </a>
-        <table>
-            <thead>
-                <th> ID </th>
-                <th> First </th>
-                <th> Last </th>
-                <th> Action </th>
-            </thead>
-                <tbody>
-                    {% for member in members %}
-                    <tr> 
-                        <td><a href="update/{{member.id}}"> {{member.id}} </a> </td>
-                        <td>{{member.firstName}}</td>
-                        <td>{{member.lastName}}</td>
-                        <td><a href="delete/{{member.id}}"> Delete </a> </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team C QA Department</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('{%static "images/Wallpaper.jpg"%}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-        </table>
-    </body>
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        a.button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Team C QA Department</h1>
+    </header>
+
+    <a class="button" href="add/">Add Member</a>
+
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>First</th>
+            <th>Last</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            {% for member in members %}
+            <tr>
+                <td><a href="update/{{member.id}}">{{member.id}}</a></td>
+                <td>{{member.firstName}}</td>
+                <td>{{member.lastName}}</td>
+                <td><a href="delete/{{member.id}}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
 
 </html>
+
