@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title> Team C QA Department </title>
+    </head>
+
+    <body>
+        <a href="add/"> Add Member </a>
+        <table>
+            <thead>
+                <th> ID </th>
+                <th> First </th>
+                <th> Last </th>
+            </thead>
+                <tbody>
+                    {% for member in members %}
+                    <tr> 
+                        <td><a href="update/{{member.id}}"> {{member.id}} </a> </td>
+                        <td>{{member.firstName}}</td>
+                        <td>{{member.lastName}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+        </table>
+    </body>
+
+</html>

@@ -1,0 +1,12 @@
+from django.urls import path
+from . import views 
+
+pageName = "Greet User"
+
+
+urlpatterns = [
+    path("", views.index,name=pageName),
+    path("home/",views.home,name="Homepage"),
+    path("home/add/",views.addMember,name="add"),
+    path("home/add/addrecord/",views.addRecord,name="addrecord"),
+]
