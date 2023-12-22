@@ -95,7 +95,7 @@
             {% for order in orders %}
             <tr>
                 <td><a href="update/{{order.referenceNumber}}">{{order.referenceNumber}}</a></td>
-                    <td>{{order.product.name}}</td>        
+                <td>{{order.product}}</td>        
                 <td><a href="delete/{{item.referenceNumber}}">Cancel Order</a></td>
             </tr>
             {% endfor %}

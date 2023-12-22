@@ -32,7 +32,7 @@ class Product(models.Model):
 
 class Order(models.Model):
     referenceNumber = models.CharField(max_length=100)
-    products = models.ManyToManyField(Product)
+    product = models.CharField(max_length=100)
     def __str__(self):
         return self.referenceNumber
 
