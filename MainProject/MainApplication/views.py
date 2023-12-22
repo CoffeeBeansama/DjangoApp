@@ -11,10 +11,10 @@ def index(request):
     return HttpResponse(loader.get_template("misc/index.html").render({},request))
     
 def home(request):
-    members = models.Member.objects.all().values()
+    orders = models.Order.objects.all().values()
     template = loader.get_template("members/home.html")
     context = {
-        "members" : members
+        "orders" : orders
     }
 
     return HttpResponse(template.render(context,request))

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team C QA Department</title>
+    <title>Aigo Firearms and Airsoft</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -78,27 +78,25 @@
 
 <body>
     <header>
-        <h1>Team C QA Department</h1>
+        <h1>Aigo Firearms and Airsoft</h1>
     </header>
 
-    <a class="button" href="add/">Add Member</a>
+    <a class="button" href="add/">Add New Order</a>
 
     <table>
         <thead>
-            <th>ID</th>
-            <th>First</th>
-            <th>Last</th>
+            <th>Reference Number</th>
+            <th>Product</th>
             <th>Action</th>
         </thead>
         <tbody>
             <br> </br>
 
-            {% for member in members %}
+            {% for order in orders %}
             <tr>
-                <td><a href="update/{{member.id}}">{{member.id}}</a></td>
-                <td>{{member.firstName}}</td>
-                <td>{{member.lastName}}</td>
-                <td><a href="delete/{{member.id}}">Delete</a></td>
+                <td><a href="update/{{order.referenceNumber}}">{{order.referenceNumber}}</a></td>
+                    <td>{{order.product.name}}</td>        
+                <td><a href="delete/{{item.referenceNumber}}">Cancel Order</a></td>
             </tr>
             {% endfor %}
         </tbody>
