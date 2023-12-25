@@ -31,7 +31,6 @@ class Product(models.Model):
         return self.name
 
 class Order(models.Model):
-    referenceNumber = models.CharField(max_length=100)
     product = models.CharField(max_length=100)
     def __str__(self):
         return self.referenceNumber

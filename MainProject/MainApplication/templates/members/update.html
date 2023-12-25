@@ -1,18 +1,68 @@
-
+{% load static %}
 <html>
-    <head>
-        <title> Update member </title>
-    </head>
 
-    <body>
-        <form action="updaterecord/{{member.id}}" method="post">
-            {% csrf_token %}
-            <label for="firstName"> First Name: </label>
-            <input name="firstName" value="{{member.firstName}}">
+<head>
+    <title>Update Order</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('{% static "images/Wallpaper.jpg" %}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #fff;
+            position: relative;
+        }
 
-            <label for="lastName"> Last Name: </label>
-            <input name="lastName" value="{{member.lastName}}">
-            <input type="submit" value="Submit">
-        </form>
-    </body>
+        form {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="updaterecord/{{order.id}}" method="post">
+        {% csrf_token %}
+        <label for="order">Product Name:</label>
+        <input name="order" value="{{order.product}}" required>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
 </html>
+

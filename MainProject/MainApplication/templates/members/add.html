@@ -1,17 +1,84 @@
-<html>
-    <head>
-        <title> Add new member </title>
-    </head>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-    <body>
-        <form action="addrecord/" method="post">
-            {% csrf_token %}
-            <label for="firstName"> First Name: </label>
-            <input name="firstName">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Order</title>
 
-            <label for="lastName"> Last Name: </label>
-            <input name="lastName">
-            <input type="submit" value="Submit">
-        </form>
-    </body>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('{% static "images/Wallpaper.jpg" %}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #fff;
+            position: relative;
+        }
+
+        body::before {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <form action="addrecord/" method="post">
+        {% csrf_token %}
+
+        <label for="product">Product Name:</label>
+        <input type="text" name="product" required>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
 </html>

@@ -19,46 +19,43 @@ def home(request):
 
     return HttpResponse(template.render(context,request))
 
-def addMember(request):
+def addOrder(request):
     template = loader.get_template("members/add.html")
     return HttpResponse(template.render({},request))
 
-def addRecord(request):
-    firstName = request.POST["firstName"]
-    lastName = request.POST["lastName"]
+def addOrder(request):
+    product = request.POST["product"]
 
-    member = models.Member(firstName=firstName,lastName=lastName)
-    member.save()
+    newOrder = models.Order(product=product)
+    newOrder.save()
     return HttpResponseRedirect(reverse("home"))
 
 def update(request,id):
-    member = models.Member.objects.get(id=id)
+    order = models.Order.objects.get(id=id)
     template = loader.get_template("members/update.html")
     context = {
-        "member" : member
+        "order" : order
     }
     return HttpResponse(template.render(context,request))
 
-def updateRecord(request,id):
-    firstName = request.POST["firstName"]
-    lastName = request.POST["lastName"]
+def updateOrder(request,id):
+    newProductName = request.POST["order"]
 
-    member = models.Member.objects.get(id=id)
-    member.firstName = firstName
-    member.lastName = lastName
-    member.save()
+    renewedOrder = models.Order.objects.get(id=id)
+    renewedOrder.product = newProductName
+    renewedOrder.save()
     return HttpResponseRedirect(reverse("home"))
 
 def delete(request,id):
-    member = models.Member.objects.get(id=id)
+    order = models.Order.objects.get(id=id)
     template = loader.get_template("members/delete.html")
     context = {
-        "member" : member
+        "order" : order
     }
     return HttpResponse(template.render(context,request))
 
-def deleteRecord(request,id):
-    member = models.Member.objects.get(id=id)
-    member.delete()
+def deleteOrder(request,id):
+    order = models.Order.objects.get(id=id)
+    order.delete()
     return HttpResponseRedirect(reverse("home"))
 

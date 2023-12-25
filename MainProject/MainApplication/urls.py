@@ -6,10 +6,10 @@ from . import settings
 
 urlpatterns = [
     path("",views.home,name="home"),
-    path("add/",views.addMember,name="addmember"),
-    path("add/addrecord/",views.addRecord,name="addrecord"),
+    path("add/",views.addOrder,name="addorder"),
+    path("add/addrecord/",views.addOrder,name="addrecord"),
     path("update/<int:id>",views.update,name="update"),
-    path("update/updaterecord/<int:id>",views.updateRecord,name="updaterecord"),
+    path("update/updaterecord/<int:id>",views.updateOrder,name="updaterecord"),
     path("delete/<int:id>",views.delete,name="delete"),
-    path("delete/deleterecord/<int:id>",views.deleteRecord,name="deleterecord"),
+    path("delete/deleterecord/<int:id>",views.deleteOrder,name="deleterecord"),
 ]
