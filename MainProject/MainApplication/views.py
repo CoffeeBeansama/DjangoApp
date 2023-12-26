@@ -9,7 +9,7 @@ from . import settings
 
 def index(request):
     return HttpResponse(loader.get_template("misc/index.html").render({},request))
-    
+
 def home(request):
     orders = models.Order.objects.all().values()
     template = loader.get_template("members/home.html")
@@ -19,7 +19,7 @@ def home(request):
 
     return HttpResponse(template.render(context,request))
 
-def addOrder(request):
+def add(request):
     template = loader.get_template("members/add.html")
     return HttpResponse(template.render({},request))
 
