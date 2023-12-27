@@ -1,2 +1,4 @@
 # DjangoApp
- BackEnd Web Development
+BackEnd Web Development
+
+Deployed app : https://aigo.pythonanywhere.com/
