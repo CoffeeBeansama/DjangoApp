@@ -3,7 +3,9 @@
 
 <head>
     <title>Update Order</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Add viewport meta tag for responsiveness -->
     <style>
+
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -12,10 +14,13 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+
             background-image: url('{% static "images/Wallpaper.jpg" %}');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+
+            background-color: black;
             color: #fff;
             position: relative;
         }
@@ -26,7 +31,8 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             max-width: 400px;
-            width: 100%;
+            width: 90%; /* Adjusted width for better mobile display */
+            margin: auto; /* Center the form on the page */
         }
 
         label {
